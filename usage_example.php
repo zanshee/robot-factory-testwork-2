@@ -21,10 +21,11 @@ var_dump($factory->createRobot2(2));
 $mergeRobot = new MergeRobot();
 $mergeRobot ->addRobot(new Robot2());
 $mergeRobot ->addRobot($factory->createRobot2(2));
-$factory->addType($mergeRobot );
-$res = reset($factory->createMergeRobot(1));
+$factory->addType($mergeRobot);
+$newMergeRobots = $factory->createMergeRobot(1);
+$res            = reset($newMergeRobots);
 
 //Результатом роботи методу буде мінімальна швидкість з усіх об’єднаних роботів
-echo $res->getSpeed();
+echo $res->getSpeed() . PHP_EOL;
 // Результатом роботи методу буде сума всіх ваг об’єднаних роботів
-echo $res->getWeight();
+echo $res->getWeight() . PHP_EOL;
